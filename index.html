@@ -31,7 +31,15 @@
     feeling bored?
   </div>
 
-  <ul>
+  <div id="code-lock" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <form>
+      <label for="code">Enter 4-digit code:</label>
+      <input type="password" id="code" name="code" maxlength="4">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <ul style="display: none;">
     <li><a href="https://sites.google.com/view/burritoedition/home">BURRITO</a></li>
     <li><a href="https://www.crazygames.no">.no</a></li>
     <li><a href="https://www.hahagames.com">haha games</a></li>
@@ -51,14 +59,32 @@
     <li><a href="https://classroom-x-games.github.io/index.html">classroom x games</a></li>
     <li><a href="https://6xgames.com">6xgames</a></li>
   </ul>
-  <p style="color: red;">added some more links!!!</p>
+  <p style="color: red; display: none;">added some more links!!!</p>
 
   <div 
   </div>
 
   <script>
-    
+    const codeLockForm = document.querySelector('#code-lock form');
+    const codeInput = document.getElementById('code');
+    const linkList = document.querySelector('ul');
+
+    codeLockForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const enteredCode = codeInput.value;
+      const correctCode = '0408'; // Replace with your desired 4-digit code
+
+      if (enteredCode === correctCode) {
+        linkList.style.display = 'block';
+        document.querySelector("p").style.display = 'block';
+        codeLockForm.remove(); // Remove the code lock form after successful entry
+        alert('                                             :)');
+      } else {
+        alert('NUH UH.');
+      }
+    });
   </script>
 </body>
 
+</html>
 </html>
