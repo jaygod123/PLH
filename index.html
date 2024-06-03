@@ -21,7 +21,7 @@
       font-size: 3rem;
     }
 
-    
+
   </style>
 </head>
 
@@ -34,7 +34,7 @@
   <div id="code-lock" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <form>
       <label for="code">Enter 4-digit code:</label>
-      <input type="password" id="code" name="code" maxlength="4">
+      <input type="number" id="code" name="code" maxlength="4">
       <button type="submit">Submit</button>
     </form>
   </div>
@@ -78,13 +78,12 @@
         linkList.style.display = 'block';
         document.querySelector("p").style.display = 'block';
         codeLockForm.remove(); // Remove the code lock form after successful entry
-        alert('                                             :)');
+        alert('(っ◔◡◔)っ ');
       } else {
-        alert('NUH UH.');
+        alert('                                  NOPE');
       }
     });
   </script>
 </body>
 
-</html>
 </html>
